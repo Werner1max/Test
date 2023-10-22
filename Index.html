@@ -6,12 +6,31 @@
   <title>three</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-
+  <body><label class="unselectable">
   <div id="test"></div>
+  
 
+  <button type="button"ontouchstart="arightDown()" 
+  ontouchend
+  ="setTimeout(arightUp,1);"
+  >Move</button> 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.js"></script>
+    <button type="button"ontouchstart="brightDown()" 
+    ontouchend
+    ="setTimeout(brightUp,1);"
+    >Move</button>
+
+    <button type="button"ontouchstart="crightDown()" 
+    ontouchend
+    ="setTimeout(crightUp,1);"
+    >Move</button>
+
+    <button type="button"ontouchstart="drightDown()" 
+    ontouchend
+    ="setTimeout(drightUp,1);"
+    >Move</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.js"></script>
  <script src="script.js"></script>
 </body>
 </html>
