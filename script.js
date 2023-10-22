@@ -4,15 +4,21 @@ function main(){
   var box = generateBox(1,1,1);
   box.name = "box-1";
   box.position.y =       box.geometry.parameters.width/2;
+  
   var floor = generateFloor(10, 20);
   floor.name = "floor";
   floor.rotation.x = Math.PI/2;
-  floor.add(box);
+  //floor.add(box);
   var pointLight = generatePointLight(0xffffff, 1);
   pointLight.position.y =5;
+  scene.add(box);
   scene.add(floor);
   scene.add(pointLight);
-
+  a = 0;
+  b = 0;
+  c = 0;
+  d = 0;
+  r = 0;
   var camera = new THREE.PerspectiveCamera(
   45,
   window.innerWidth/window.innerHeight,
@@ -22,8 +28,9 @@ function main(){
 );
 camera.position.x = 1;
 camera.position.y = 5;
-camera.position.z = 5;
+camera.position.z = 10;
 camera.lookAt(new THREE.Vector3(0,0,-5));
+box.add(camera);
 
 var renderer = new THREE.WebGLRenderer();
 renderer.shadowMap.enabled = true;
@@ -63,11 +70,52 @@ light.castShadow = true;
 return light;
 }
 
+function arightDown(){
+  a =0.1;
+}
+function arightUp(){
+  a = 0;
+}
+
+function brightDown(){
+  b =0.1;
+}
+function brightUp(){
+  b = 0;
+}
+
+function crightDown(){
+  c =0.1;
+  if (a>=0){r =0.2;}
+  if (b>0){r =-0.2;}
+  
+  
+}
+function crightUp(){
+  c = 0;
+  r = 0;
+}
+
+function drightDown(){
+  d =0.1;
+  if (a>=0){r =-0.2;}
+  if (b>0){r =0.2;}
+}
+function drightUp(){
+  d = 0;
+  r = 0;
+}
 function update(renderer, scene, camera){
   renderer.render(scene, camera);
-  var floor = scene.getObjectByName("floor");
-  scene.children[0].rotation.y += 0.02;
-  floor.rotation.z += 0.001; 
+  var box = scene.getObjectByName("box-1");
+  scene.children[0].position.z -= a;
+  scene.children[0].position.z += b;
+  scene.children[0].position.x -= c;
+  scene.children[0].position.x += d;
+  scene.children[0].rotation.y = r;
+  //scene.children[0].rotation.y = d;
+  //floor.rotation.z += 0; 
+  
 
   scene.traverse(function(child){
     //child.position.x += 0.001;
@@ -78,4 +126,3 @@ function update(renderer, scene, camera){
 }
 var scene = main();
 console.log(scene);
-
