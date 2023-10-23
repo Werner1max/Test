@@ -86,10 +86,6 @@ function brightUp(){
 
 function crightDown(){
   c =0.1;
-  if (a>=0){r =0.2;}
-  if (b>0){r =-0.2;}
-  
-  
 }
 function crightUp(){
   c = 0;
@@ -98,8 +94,6 @@ function crightUp(){
 
 function drightDown(){
   d =0.1;
-  if (a>=0){r =-0.2;}
-  if (b>0){r =0.2;}
 }
 function drightUp(){
   d = 0;
@@ -107,16 +101,14 @@ function drightUp(){
 }
 function update(renderer, scene, camera){
   renderer.render(scene, camera);
+   if (a>0&&'drightDown'){}
   var box = scene.getObjectByName("box-1");
-  scene.children[0].position.z -= a;
-  scene.children[0].position.z += b;
-  scene.children[0].position.x -= c;
-  scene.children[0].position.x += d;
-  scene.children[0].rotation.y = r;
-  //scene.children[0].rotation.y = d;
-  //floor.rotation.z += 0; 
   
-
+  scene.children[0].rotation.y += a;
+  scene.children[0].rotation.y -= b;
+  scene.children[0].translateZ(-c);
+  scene.children[0].translateZ(d);
+  
   scene.traverse(function(child){
     //child.position.x += 0.001;
   });
@@ -126,3 +118,4 @@ function update(renderer, scene, camera){
 }
 var scene = main();
 console.log(scene);
+
