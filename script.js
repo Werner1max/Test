@@ -18,7 +18,7 @@ function main(){
   b = 0;
   c = 0;
   d = 0;
-  r = 0;
+
   var camera = new THREE.PerspectiveCamera(
   45,
   window.innerWidth/window.innerHeight,
@@ -89,15 +89,13 @@ function crightDown(){
 }
 function crightUp(){
   c = 0;
-  r = 0;
 }
 
 function drightDown(){
-  d =0.1;
+  d =0.3;
 }
 function drightUp(){
   d = 0;
-  r = 0;
 }
 function update(renderer, scene, camera){
   renderer.render(scene, camera);
@@ -106,8 +104,8 @@ function update(renderer, scene, camera){
   
   scene.children[0].rotation.y += a;
   scene.children[0].rotation.y -= b;
-  scene.children[0].translateZ(-c);
-  scene.children[0].translateZ(d);
+  scene.children[0].translateZ(c);
+  scene.children[0].translateZ(-d);
   
   scene.traverse(function(child){
     //child.position.x += 0.001;
