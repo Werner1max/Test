@@ -1,3 +1,4 @@
+
 function main(){
   var scene = new THREE.Scene();
 
@@ -58,8 +59,8 @@ function main(){
 
 );
 camera.position.x =0;//1;
-camera.position.y =0;//5;
-camera.position.z =0;//10;
+camera.position.y =5;//5;
+camera.position.z =10;//10;
 camera.lookAt(new THREE.Vector3(0,0,-5));
 sphere.add(camera);
 
@@ -134,6 +135,102 @@ light.castShadow = true;
 return light;
 }
 
+document.addEventListener('keydown',
+function(event){
+if (event.key === 'a')
+{
+a2=0.03;
+}
+});
+
+document.addEventListener('keyup',
+function(event){
+if (event.key === 'a')
+{
+a2=0;
+}
+});
+
+document.addEventListener('keydown',
+function(event){
+if (event.key === 'd')
+{
+b2=0.03;
+}
+});
+
+document.addEventListener('keyup',
+function(event){
+if (event.key === 'd')
+{
+b2=0;
+}
+});
+
+document.addEventListener('keydown',
+function(event){
+if (event.key === 'w')
+{
+d2=0.1;
+}
+});
+
+document.addEventListener('keyup',
+function(event){
+if (event.key === 'w')
+{
+d2=0;
+}
+});
+
+document.addEventListener('keydown',
+function(event){
+if (event.key === 's')
+{
+c2=0.1;
+}
+});
+
+document.addEventListener('keyup',
+function(event){
+if (event.key === 's')
+{
+c2=0;
+}
+});
+
+document.addEventListener('keydown',
+function(event){
+if (event.key === 'p')
+{
+d=3;
+}
+});
+
+document.addEventListener('keyup',
+function(event){
+if (event.key === 'p')
+{
+d=3;
+}
+});
+
+document.addEventListener('keydown',
+function(event){
+if (event.key === 'l')
+{
+b=1;
+}
+});
+
+document.addEventListener('keyup',
+function(event){
+if (event.key === 'l')
+{
+b = 0;
+  g=0;
+}
+});
 function arightDown(){
 
   a =0.1;
