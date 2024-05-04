@@ -2,6 +2,8 @@ html {
   height: 100%;
   width: 100%;
 }
+
+
   button {
     background-color: #192841;
     border: none;
@@ -14,6 +16,7 @@ html {
     margin: 4px 2px;
     cursor: pointer;
   }
+
 
 .unselectable {
     -webkit-touch-callout: none;
@@ -31,4 +34,20 @@ html {
   float: left;
   background-color:#202020;
 
+}
+
+div {
+    -webkit-appearance: none;
+    
+    position: absolute;
+    min-width: 80px;
+    border-radius: 0;
+    z-index: 1;
+}
+
+.containert{ 
+
+  float: right;
+  width: 15%;
+  min-width: 300px;
 }
