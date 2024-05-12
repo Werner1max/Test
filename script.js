@@ -77,7 +77,7 @@ return scene;
 function generateFloor(w,d) { 
   var geo = new THREE.PlaneGeometry(w, d);
   var mat = new THREE.MeshPhongMaterial({
-color: 'rgb(100,100,100)',
+color: 'rgb(100,225,100)',
 side: THREE.DoubleSide
  });
   var mesh = new THREE.Mesh(geo, mat);
